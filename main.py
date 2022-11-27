@@ -51,10 +51,20 @@ else:
 Пример:
 A (3,6); B (2,1) -> 5,09
 A (7,-5); B (1,-1) -> 7,21
-'''
+
 coords_A = input('Введите координаты первой точки (x y z) через spase: ')
 coords_B = input('Введите координаты второй точки (x y z) через spase: ')
 coords_A.split()
 coords_B.split()
 print(((int(coords_B[0]) - int(coords_A[0])) ** 2 + (int(coords_B[2]) - int(coords_A[2])) ** 2 + (
             int(coords_B[4]) - int(coords_A[4])) ** 2)**(1/2))
+Напишите программу для. проверки истинности утверждения ¬(X ⋁ Y ⋁ Z) = ¬X ⋀ ¬Y ⋀ ¬Z для всех значений предикат.
+'''
+
+for x in range(2):
+    for y in range(2):
+        for z in range(2):
+            if not(x or y or z) == (not x and not y and not z):
+                print(f'{x}|{y}|{z} = истина')
+            else:
+                print(f'{x}|{y}|{z} = ложь')
